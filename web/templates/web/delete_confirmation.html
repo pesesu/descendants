@@ -1,0 +1,16 @@
+{% extends 'web/index.html' %}
+{% load static %}
+
+{% block content %}
+<div class="delete-confirmation">
+    <h4>Are you sure you wanto delete?</h4>
+    <p><strong>{{person.first_name}} {{person.middle_name}} {{person.surname}} </strong></p>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="del-con-btns d-flex">
+            <input type="submit" class="btn btn-danger px-3" value="delete">
+            <a class="btn btn-primary px-3 mx-2" href="{% url 'delete-search'%}">cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

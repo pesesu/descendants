@@ -1,0 +1,87 @@
+{% extends 'web/index.html' %}
+{% load static %}
+
+{% block content %}
+<div class="person-page">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="profile">
+                <div class="pic">
+                    <img src="{{person.image.url}}" alt="">
+                </div>
+                <div class="det">
+                    <div class="elem">
+                        <p>Surname:</p>
+                        <p>Fist Name:</p>
+                        <p>Middle Name:</p>
+                        <p>Alias:</p>
+                        <p>Gender:</p>
+                        <p>DOB:</p>
+                        <p>Phone:</p>
+                        <p>Email:</p>
+                    </div>
+                    <div class="act">
+                        <p>{{person.surname}}.</p>
+                        <p>{{person.first_name}}.</p>
+                        <p>{{person.middle_name}}.</p>
+                        <p>{{person.alias}}.</p>
+                        <p>{{person.sex}}.</p>
+                        <p>{{person.birth_date}}.</p>
+                        <p>{{person.phone}}.</p>
+                        <p>{{person.email}}.</p>
+                    </div>
+
+                </div>
+            {% if request.user.is_staff %}
+            <a href="{% url 'person-update' person.id %}" class="btn update-btn btn-outline-success">Update {{person.first_name}}</a>
+            {% endif %}
+            {% if request.user == person.user %}
+            <a href="{% url 'update-person' person.id %}" class="btn update-btn btn-outline-success">Update Info</a>
+            {% endif %}
+        </div>
+
+        </div>
+        <div class="col-md-8 add-margin">
+            <div class="row family">
+                <div class="col-5 col-md-7">
+                    <div class="wives">
+                        <h5>Spouce</h5>
+                        {% for sp in spouse %}
+                            {% if sp.verified %}
+                                <a href="{% url 'person-page' sp.id %}"><p>{{sp}}</p></a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="parents">
+                        <h5>Parents</h5>
+                        {% if parents.father is not None and parents.father.verified %}
+                            <a href="{% url 'person-page' parents.father.id %}"><p>{{parents.father}}</p></a>
+                        {% endif %}
+                        {% if parents.mother is not None and parents.mother.is_verified %}
+                            <a href="{% url 'person-page' parents.mother.id %}"><p>{{parents.mother}}</p></a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-6 col-md-5">
+                    <div class="children"></div>
+                        <h5>Children </h5>
+                        {% for child in children %}
+                            {% if child.verified %}
+                                <a href="{% url 'person-page' child.id %}"><p>{{child}}</p></a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="history mb-5">
+                            <h5>Short History</h5>
+                            {{person.short_history|linebreaks}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <style media="screen">
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        background: url("{% static 'images/login.png' %}");
+        background-repeat: no-repeat;
+      }
+
+      .wrapper {
+        padding: 1rem 7rem;
+        background: rgba(0, 0, 0, .3);
+        height: 100vh;
+      }
+
+      input {
+        margin-bottom: 1rem;
+      }
+
+      .form-wrapper {
+        padding: 6rem 2rem;
+      }
+
+      .edit-col {
+        margin: auto 0 auto auto;
+        background: #03b8b8;
+        background: #03b8b8;
+        margin-top: 1rem;
+      }
+
+      .mt {
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="row">
+        <div class="col-md-6 col-lg-5 col-xl-4 edit-col px-sm-5 px-md-0 px-xl-4 bg-secondary shadow">
+          <div class="form-wrapper">
+            <form class="" method="POST">
+              {% csrf_token %}
+              <input type="text" class="form-control shadow" name="username" required  placeholder="Username">
+              <input type="email" class="form-control shadow" name="email" required  placeholder="Email">
+
+              <input type="password" class="form-control shadow" name="password1" required placeholder="Password">
+              <input type="password" class="form-control shadow" name="password2" required placeholder="Confirm password">
+              <div class="sex di-flex">
+                <p class="d-inline"><input type="radio" name="sex" value="Male"><span class="mx-1 text-white">Male</span></p>
+                <p class="d-inline mx-2"><input type="radio" name="sex" value="Female"><span class="mx-1 text-white">Female</span></p>
+              </div>
+              <input type="submit" class="btn btn-primary form-control shadow mt-2" value="Register">
+            </form>
+            <p class="text-white mt-2">{{message}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

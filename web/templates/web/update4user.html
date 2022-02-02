@@ -1,0 +1,17 @@
+{% extends 'web/index.html' %}
+
+
+{% block content %}
+<div class="row">
+  <div class="col-md-6 col-lg-5 col-xl-4 mx-auto">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h4 class="mt-2">image:</h4>
+      <p>{{form.image}}</p>
+      <h4>Short history:</h4>
+      <p>{{form.short_history}}</p>
+      <input class="btn btn-sm btn-primary" type="submit" value="Update">
+    </form>
+  </div>
+</div>
+{% endblock %}

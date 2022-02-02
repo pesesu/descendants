@@ -1,0 +1,30 @@
+{% extends 'web/index.html' %}
+
+
+{% block content %}
+<div class="search">
+    <p class='heading mt-5'>Search person by Surname & Firstname</p>
+    <form method="GET">
+        {% csrf_token %}
+        <div class="wrapper">
+            <div class="search-input">
+                <input type="text" name='search'>
+            </div>
+            <div class="search-icon">
+                <button type="submit"><i class="las la-search" type="submit"></i></button>
+            </div>
+        </div>
+    </form>
+    
+
+
+    <div class="links">
+        <P class="message">{{message}}</P>
+        <div class="search-link">
+            {% for per in result %}
+            <p><a href="{% url 'delete-confirmation' per.id %}">{{per}}</a></p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

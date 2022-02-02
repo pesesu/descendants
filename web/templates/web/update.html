@@ -1,0 +1,83 @@
+{% extends 'web/index.html' %}
+
+
+{% block content %}
+<form class="form" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+        {% if person.verified == True %}
+            <div class="d-flex">
+                <h5 class="d-inline mr-3">unverify:</h5>
+                <p class="d-inline mt-1 mx-3">{{ form.verified }}</p>
+            </div>
+        {% endif %}
+        {% if person.verified == False %}
+            <div class="d-flex">
+                <h5 class="d-inline mr-3">verify:</h5>
+                <p class="d-inline mt-1 mx-3">{{ form.verified }}</p>
+            </div>
+        {% endif %}
+
+        <div class="col-md-8 px-sm-5 px-md-4 px-lg-6 col-lg-5">
+            <div class="row">
+                <div class="col-4">
+                  {% if request.user.is_staff %}
+                    <p class="surname">Surname:</p>
+                    <p class="first-name">First Name:</p>
+                    <p class="middle-name">Middle Name:</p>
+                    <div class="alias">Nick Name:</div>
+                    <p class="date-of-birth">DOB:</p>
+                    <p class="phone">Phone No:</p>
+                    <p class="email">Email:</p>
+                    <p class="complexion">Complexion</p>
+                    <p class="gender">Gender:</p>
+                    <P class="spouse">Is Spouze:</P
+                  {% endif %}
+                    <p class="Profile-image">Image:</p>
+                </div>
+
+                <div class="col-8">
+                  {% if request.user.is_staff %}
+                    <p class="">{{form.surname}}</p>
+                    <p class="mt-4">{{form.first_name}}</p>
+                    <p class="mt-4">{{form.middle_name}}</p>
+                    <p class="mt-4">{{form.alias}}</p>
+                    <p class="mt-4">{{form.birth_date}}</p>
+                    <p class="mt-4">{{form.phone}}</p>
+                    <p class="mt-4">{{form.email}}</p>
+                    <p class="mt-4">{{form.complexion}}</p>
+                    <p class="mt-4">{{form.sex}}</p>
+                    <p class="mt-4">{{form.is_spouse}}</p>
+                  {% endif %}
+                    <p class="mt-4">{{form.image}}</p>
+                </div>
+
+                <div class="history">
+                    <p>Short Description:</p>
+                    <p class="mt-2">{{form.short_history}}</p>
+                </div>
+
+            </div>
+        </div>
+        {% if request.user.is_staff %}
+        <div class="col-md-4 px-sm-5 px-md-4 px-lg-5 px-lg-4">
+            <h5 class="mt-4 mt-md-0">Select children</h5>
+            {{person_children.children}}
+            <h5 class="mt-5">Select spouse</h5>
+            {{married.spouse}}
+            <h5 class="mt-5 ml-md-4 ml-lg-5">Select parents</h5>
+            <p>Father</p>
+            {{person_parent.father}}
+            <p class="mt-4">Mother</p>
+            {{person_parent.mother}}
+        </div>
+        {% endif %}
+    </div>
+    <div class="update-btn d-flex">
+        <input class="btn form-btn btn-success mb-5" type="submit" value="Update">
+        <div class="ml-auto">
+            <a  style="height: 2rem; margin-top: 1.2rem;" class="btn btn-danger btn-sm mx-md-3 mx-lg-4 mx-xl-5 px-3" href="">Delete</a>
+        </div>
+    </div>
+</form>
+{% endblock %}
