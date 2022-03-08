@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;500;600&family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,900&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;500;600&family=Mulish:wght@200;300;400;500;600;700;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@400;600;700;900&display=swap');
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: #333;
     font-family: 'Libre Baskerville', serif;
+    font-family: 'Mulish', sans-serif;
 }
 
 font {
@@ -179,20 +180,33 @@ nav {
 /* HOME PAGE */
 .tree {
     text-align: center;
+    background: #e8e8e9;
+    padding-top: 4.5rem;
+    height: 100vh;
 }
 .tree img {
     height: 20rem !important;
     width:17rem;
+    margin-top: 1rem;
 }
 
 .tree h1 {
     color: #df63b7;
+    font-family: 'Libre Baskerville', serif;
+    margin-top: .8rem;
+}
+
+.tree .about h4 {
+    font-family: 'Mulish', sans-serif !important;
+    font-size: 1.4rem;
+    margin-top: 1rem;
 }
 
 /* USERS */
 
 .users {
-    padding: 2rem 7%
+    padding: 2rem 7%;
+    margin-top: 4rem;
 }
 
 .users h2{
@@ -201,6 +215,7 @@ nav {
 
 .users  p {
     font-family: 'Roboto', sans-serif;
+    font-family: 'Mulish', sans-serif !important;
 }
 
 .users a {
@@ -220,12 +235,14 @@ nav {
 
 /* SEARCH PAGE */
 .search {
-    padding: 2rem 7%;
+    padding: 6rem 7%;
     font-family: 'Roboto', sans-serif;
+    font-family: 'Mulish', sans-serif !important;
 }
 
 .search p {
     font-family: 'Roboto', sans-serif;
+    font-family: 'Mulish', sans-serif !important;
     font-size: 1.12em;
     line-height: .9rem;
     color: #666666;
@@ -306,6 +323,7 @@ nav {
     margin-top: 1rem;
     padding: 0 7%;
     font-size: 0.9rem;
+    margin-top: 4.5rem;
 }
 
 .surname {
@@ -364,6 +382,7 @@ nav {
 
 /* PERSON PAGE */
 .person-page {
+    margin-top: 4.5rem;
     padding: .5rem 7%;
 }
 
@@ -390,6 +409,7 @@ nav {
 
 .person-page .act {
     font-family: 'Roboto', sans-serif;
+    font-family: 'Mulish', sans-serif !important;
     font-size: .8rem;
     line-height: 10px;
     margin-left: 1rem;
@@ -415,6 +435,7 @@ nav {
 
 .person-page .family p {
     font-family: 'Roboto', sans-serif;
+    font-family: 'Mulish', sans-serif !important;
     font-size: .9rem;
     color: #333;
     line-height: .5rem;
@@ -430,11 +451,10 @@ nav {
 
 .person-page .history {
     font-family: 'Roboto', sans-serif;
+    font-family: 'Mulish', sans-serif !important;
     min-height: 17rem;
     padding: 1.5rem 1rem 2rem;
-    background: #B2B2B2;
-    background: #a9cafc;
-    background: #DDE0E3;
+    background: #e3e6e9;
 }
 
 .person-page .history p {
@@ -454,6 +474,7 @@ nav {
 
 .delete-confirmation {
     padding: 2rem 7%;
+    margin-top: 4.5rem;
 }
 
 /* SMALL */

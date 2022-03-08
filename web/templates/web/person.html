@@ -34,8 +34,7 @@
                 </div>
             {% if request.user.is_staff %}
             <a href="{% url 'person-update' person.id %}" class="btn update-btn btn-outline-success">Update {{person.first_name}}</a>
-            {% endif %}
-            {% if request.user == person.user %}
+            {% elif request.user == person.user %}
             <a href="{% url 'update-person' person.id %}" class="btn update-btn btn-outline-success">Update Info</a>
             {% endif %}
         </div>
@@ -45,7 +44,7 @@
             <div class="row family">
                 <div class="col-5 col-md-7">
                     <div class="wives">
-                        <h5>Spouce</h5>
+                        <h5>Spouse</h5>
                         {% for sp in spouse %}
                             {% if sp.verified %}
                                 <a href="{% url 'person-page' sp.id %}"><p>{{sp}}</p></a>

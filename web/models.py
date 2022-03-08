@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 
+
+
 class Person(models.Model):
     SEX = (
         ('Male', 'Male'),
@@ -34,12 +36,13 @@ class Person(models.Model):
         verbose_name_plural = 'People'
         ordering = ['surname', 'first_name']
         
-
     def __str__(self):
         if self.surname is not None and  self.first_name is not None:
             return f'{self.surname} {self.first_name}'
         else:
             return f'{self.user.email} {self.user.username} '
+
+
 
 
 class Married(models.Model):
@@ -67,6 +70,8 @@ class PersonChildren(models.Model):
 
     def __str__(self):
         return str(self.person)
+
+
 
 
 class PersonParent(models.Model):

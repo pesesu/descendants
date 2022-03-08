@@ -76,7 +76,7 @@
     <div class="update-btn d-flex">
         <input class="btn form-btn btn-success mb-5" type="submit" value="Update">
         <div class="ml-auto">
-            <a  style="height: 2rem; margin-top: 1.2rem;" class="btn btn-danger btn-sm mx-md-3 mx-lg-4 mx-xl-5 px-3" href="">Delete</a>
+            <a  style="height: 2rem; margin-top: 1.2rem;" class="btn btn-danger btn-sm mx-md-3 mx-lg-4 mx-xl-5 px-3" href="{% url 'delete-confirmation' person.id %}">Delete</a>
         </div>
     </div>
 </form>

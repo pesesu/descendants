@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group, User
 from django.contrib.auth.models import User
+# from django.contrib.auth import auth_views
 
 from django.conf import settings
 from django.conf.urls import url

@@ -21,7 +21,7 @@
       }
 
       .wrapper {
-        padding: 1rem 7rem;
+        padding: 0rem 7rem;
         background: rgba(0, 0, 0, .3);
         height: 100vh;
       }
@@ -58,7 +58,8 @@
               <br>
               <input value="Login" type="submit" class="btn btn-primary form-control mt-2 shadow">
             </form>
-            <p class="text-white mt-2">{{message}}</p>
+            <p class="text-white mt-2 text-center">{{message}}</p>
+            <a href="{% url 'password_reset' %}"><p class='text-dark text-center mt-3'><small>Password reset</small></p></a>
           </div>
         </div>
       </div>
