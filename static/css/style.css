@@ -112,6 +112,17 @@ nav {
     display: none
 }
 
+.nav-toggle i {
+    font-size: 1rem;
+    margin-left: 1.3rem;
+}
+
+.toggle {
+    position: relative;
+    top: 3rem;
+    left: 2rem;
+}
+
 .sidebar {
     position: absolute;
     top: 0;
@@ -187,18 +198,19 @@ nav {
 .tree img {
     height: 20rem !important;
     width:17rem;
-    margin-top: 1rem;
+    margin-top: .7rem;
 }
 
 .tree h1 {
     color: #df63b7;
     font-family: 'Libre Baskerville', serif;
-    margin-top: .8rem;
+    margin-top: 1.5rem;
+    font-size: 1.6rem;
 }
 
 .tree .about h4 {
     font-family: 'Mulish', sans-serif !important;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-top: 1rem;
 }
 
@@ -230,6 +242,20 @@ nav {
 
 .users .reg h4{
     color: #df63b7;
+}
+
+.add-someone {
+    padding: 1.5rem 2rem;
+    border: 2px solid #6ea7fc;
+}
+
+.des-link-btn {
+    text-decoration: none !important;
+    font-size: 1rem !important;
+}
+
+.des-link-btn:hover {
+    color: #424040 !important;
 }
 
 

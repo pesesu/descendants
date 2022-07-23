@@ -20,7 +20,7 @@ def home(request):
     print(request.user)
     return render(request, 'web/home.html')
 
-#@verified
+@login_required(login_url='login')
 def person_search(request):
     result = list()
     message = ''
@@ -44,7 +44,7 @@ def person_search(request):
     return render(request, 'web/person-search.html', context)
 
 
-@login_required
+@login_required(login_url='login')
 @admin_only
 @verified
 def add_page(request):
@@ -133,7 +133,8 @@ def add_page(request):
 
     return render(request, 'web/add.html', context)
 
-@login_required
+
+@login_required(login_url='login')
 @verified
 def update(request, pk):
     person = Person.objects.get(id=pk)
@@ -253,16 +254,7 @@ def update(request, pk):
     return render(request, 'web/update.html', context)
 
 
-
-# def delete(request):
-#     children = Person.objects.all()
-#     print(children.count())
-#     for child in children:
-#         child.delete()
-#         print('deleted')
-#     return HttpResponse('Deleting...')
-
-@login_required
+@login_required(login_url='login')
 @admin_only
 @verified
 def delete_search(request):
@@ -287,7 +279,7 @@ def delete_search(request):
     return render(request, 'web/delete_search.html', context)
 
 
-@login_required
+@login_required(login_url='login')
 @admin_only
 def delete_confirmation(request, pk):
     person = Person.objects.get(id=pk)
@@ -301,7 +293,7 @@ def delete_confirmation(request, pk):
     return render(request, 'web\delete_confirmation.html', context)
 
 
-@login_required
+@login_required(login_url='login')
 @verified
 def person_page(request, pk):
     context = {}
@@ -325,7 +317,8 @@ def person_page(request, pk):
 
     return render(request, 'web/person.html', context)
 
-@login_required
+
+@login_required(login_url='login')
 @admin_only
 def users(request):
     form = UserCreationpersonForm()
@@ -496,7 +489,7 @@ def after_signup(request, pk):
     return render(request, 'web/after_signup.html', context)
 
 
-@login_required
+@login_required(login_url='login')
 @verified
 def update_for_user(request, pk):
     person = Person.objects.get(id=pk)

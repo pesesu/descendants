@@ -31,7 +31,7 @@
       }
 
       .form-wrapper {
-        padding: 8rem 2rem 8rem;
+        padding: 7rem 2rem 5rem;
       }
 
       .edit-col {
@@ -41,8 +41,8 @@
         margin-top: 4rem;
       }
 
-      .mt {
-
+      .lk {
+        color: #dad3d3;
       }
     </style>
   </head>
@@ -59,7 +59,7 @@
               <input value="Login" type="submit" class="btn btn-primary form-control mt-2 shadow">
             </form>
             <p class="text-white mt-2 text-center">{{message}}</p>
-            <a href="{% url 'password_reset' %}"><p class='text-dark text-center mt-3'><small>Password reset</small></p></a>
+            <a href="{% url 'password_reset' %}"><p class='lk text-center mt-3'><small>Password reset</small></p></a>
           </div>
         </div>
       </div>

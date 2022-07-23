@@ -7,10 +7,10 @@
 {% block content %}
 <div class="users">
     <div class="row">
-        <div class="col-md-6 col-lg-7">
+        <div class="col-md-6 col-lg-5">
             <div class="container">
                 <div class="unverified">
-                    <h2 class="mb-3">Unverified users.</h2>
+                    <h2 class="mb-3">Unverified persons.</h2>
                     {% for i in unverified_users %}
                     <div class="d-flex">
                         <p class="d-inline">{{i}}</p>
@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="verified mt-5">
-                    <h2 class="mb-3">Verified users</h2>
+                    <h2 class="mb-3">Verified persons.</h2>
                     {% for i in verified_users %}
                     <div class="d-flex">
                         <p class="d-inline">{{i}}</p>
@@ -33,6 +33,10 @@
 
         <div class="col-md-6 col-lg-5">
             <div class="reg mt-5 mt-md-0">
+                <div class="add-someone mb-5 mt-1">
+                    <a href="{% url 'add' %}" class="des-link-btn d-block mb-1 text-success">Add Someone</a>
+                    <a href="{% url 'delete-search' %}" class="des-link-btn d-block text-danger">Delete an account</a>
+                </div>
                 <h4>Create User</h4>
                 <form method="POST" action="">
                     {% csrf_token %}
